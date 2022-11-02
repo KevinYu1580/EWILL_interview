@@ -1,0 +1,238 @@
+body {
+  background-color: #e2d9d3;
+}
+body * {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.coverpage {
+  padding: 60px 24px 44px;
+  background-image: url("../img/blueBg.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coverpage h2 {
+  line-height: 125%;
+  letter-spacing: 0.2rem;
+  color: #fff;
+  display: block;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 700;
+  text-align: center;
+}
+.coverpage h2 .topsec {
+  display: block;
+  font-size: 32px;
+  margin: 0 auto 4px;
+  letter-spacing: 0.3rem;
+}
+.coverpage h2 .botsec {
+  display: block;
+  font-size: 28px;
+  margin: 0 auto 32px;
+}
+.coverpage .formHeader {
+  width: 200px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b57556;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(250, 163, 163, 0.91);
+  margin: 0 auto 32px;
+}
+.coverpage .formHeader .headerText {
+  color: white;
+  font-weight: 700;
+  line-height: 125%;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+.coverpage .formInfo {
+  background-color: #dae4f1;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 32.5px 16px 24px;
+  border-radius: 20px;
+  border: 2px solid #b57556;
+  position: relative;
+}
+.coverpage .formInfo .topBoat {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 64px;
+}
+.coverpage .formInfo .topBoat .bubble1 {
+  background-image: url("../img/bubble.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: -78%;
+  right: 16%;
+  z-index: 12;
+}
+.coverpage .formInfo .topBoat .bubble2 {
+  background-image: url("../img/bubble.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 12px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: -104%;
+  right: 0%;
+  z-index: 12;
+}
+.coverpage .formInfo .topBoat .paddle {
+  background-image: url("../img/paddle.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 62px;
+  height: 46px;
+  position: absolute;
+  top: -24%;
+  right: -10%;
+  z-index: 11;
+}
+.coverpage .formInfo .topBoat .sup {
+  background-image: url("../img/sup.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80px;
+  height: 64px;
+  position: absolute;
+  top: -44%;
+  right: -18%;
+  z-index: 10;
+}
+.coverpage .formInfo .botBoat {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 68px;
+  height: 65px;
+}
+.coverpage .formInfo .botBoat .firework {
+  background-image: url("../img/firework.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  bottom: -67%;
+  left: -31%;
+  z-index: 12;
+}
+.coverpage .formInfo .botBoat .sup {
+  background-image: url("../img/sup2.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 68px;
+  height: 65px;
+  position: absolute;
+  bottom: -51%;
+  left: 7%;
+  z-index: 10;
+}
+.coverpage .formInfo .sec1 {
+  padding-bottom: 32.5px;
+}
+.coverpage .formInfo .myTitle {
+  color: #204379;
+  font-weight: 700;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 0 auto 24.5px auto;
+  line-height: 125%;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+.coverpage .formInfo .myTitle::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -34px;
+  width: 30px;
+  aspect-ratio: 3/4;
+  background-image: url("../img/cactus.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coverpage .formInfo .myTitle::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -34px;
+  width: 30px;
+  aspect-ratio: 3/4;
+  background-image: url("../img/cactus.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coverpage .formInfo .mycontent {
+  line-height: 180%;
+  font-size: 16px;
+  color: #204379;
+  text-indent: -20px;
+  transform: translateX(24px);
+  margin-right: 24px;
+  margin-bottom: 0;
+}
+.coverpage .formInfo .mycontent .myIndent {
+  text-indent: 0;
+}
+
+.wave {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+}
+.wave .move1 {
+  -webkit-animation: waveMove 8s infinite linear;
+          animation: waveMove 8s infinite linear;
+}
+.wave .move2 {
+  -webkit-animation: waveMove 8s infinite linear;
+          animation: waveMove 8s infinite linear;
+}
+@-webkit-keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}/*# sourceMappingURL=style.css.map */

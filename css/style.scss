@@ -1,0 +1,249 @@
+// ****style var****
+
+// font
+$f_40px: 40px;
+$f_32px: 32px;
+$f_28px: 28px;
+$f_24px: 24px;
+$f_20px: 20px;
+$f_18px: 18px;
+$f_16px: 16px;
+$f_14px: 14px;
+$f_12px: 12px;
+
+$f_weight700: 700;
+
+$f_family: "Noto Sans TC", sans-serif;
+
+//color
+$prime_color1: #204379;
+$prime_color2: #b57556;
+$prime_color3: #dae4f1;
+$prime_color4: #e2d9d3;
+$prime_color5: #d3c3b8;
+$prime_color6: #b3b960;
+$prime_color7: #a0bcc8;
+
+// mixin
+@mixin bgi($i) {
+  background-image: url($i);
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// **** main style ****
+body {
+  background-color: $prime_color4;
+  * {
+    font-family: $f_family;
+  }
+}
+
+.coverpage {
+  padding: 60px 24px 44px;
+  @include bgi("../img/blueBg.svg");
+  h2 {
+    line-height: 125%;
+    letter-spacing: 0.2rem;
+    color: #fff;
+    display: block;
+    margin: auto;
+    width: fit-content;
+    font-weight: $f_weight700;
+    text-align: center;
+    .topsec{
+        display: block;
+        font-size: $f_32px;
+        margin: 0 auto 4px;
+        letter-spacing: 0.3rem;
+    }
+    .botsec{
+        display: block;
+        font-size: $f_28px;
+        margin: 0 auto 32px;
+    }
+  }
+  .formHeader {
+    width: 200px;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $prime_color2;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px rgba(250, 163, 163, 0.91);
+    margin: 0 auto 32px;
+    .headerText {
+      color: white;
+      font-weight: $f_weight700;
+      line-height: 125%;
+      font-size: $f_18px;
+      letter-spacing: 0.2rem;
+      font-style: normal;
+    }
+  }
+  .formInfo {
+    background-color: $prime_color3;
+    width: 100%;
+    height: fit-content;
+    padding: 32.5px 16px 24px;
+    border-radius: 20px;
+    border: 2px solid $prime_color2;
+    position: relative;
+    .topBoat {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 64px;
+      .bubble1 {
+        @include bgi("../img/bubble.svg");
+        width: 20px;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        top: -78%;
+        right: 16%;
+        z-index: 12;
+      }
+      .bubble2 {
+        @include bgi("../img/bubble.svg");
+        width: 12px;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        top: -104%;
+        right: 0%;
+        z-index: 12;
+      }
+      .paddle {
+        @include bgi("../img/paddle.svg");
+        width: 62px;
+        height: 46px;
+        position: absolute;
+        top: -24%;
+        right: -10%;
+        z-index: 11;
+      }
+      .sup {
+        @include bgi("../img/sup.svg");
+        width: 80px;
+        height: 64px;
+        position: absolute;
+        top: -44%;
+        right: -18%;
+        z-index: 10;
+      }
+    }
+    .botBoat {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 68px;
+      height: 65px;
+      .firework {
+        @include bgi("../img/firework.svg");
+        width: 58px;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        bottom: -67%;
+        left: -31%;
+        z-index: 12;
+      }
+      .sup {
+        @include bgi("../img/sup2.svg");
+        width: 68px;
+        height: 65px;
+        position: absolute;
+        bottom: -51%;
+        left: 7%;
+        z-index: 10;
+      }
+    }
+    .sec1 {
+      padding-bottom: 32.5px;
+    }
+    .myTitle {
+      color: $prime_color1;
+      font-weight: $f_weight700;
+      width: fit-content;
+      display: block;
+      margin: 0 auto 24.5px auto;
+      line-height: 125%;
+      font-size: $f_18px;
+      font-weight: $f_weight700;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -34px;
+        width: 30px;
+        aspect-ratio: 3 / 4;
+        @include bgi("../img/cactus.svg");
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -34px;
+        width: 30px;
+        aspect-ratio: 3 / 4;
+        @include bgi("../img/cactus.svg");
+      }
+    }
+    .mycontent {
+      line-height: 180%;
+      font-size: $f_16px;
+      color: $prime_color1;
+      text-indent: -$f_20px;
+      transform: translateX(24px);
+      margin-right: 24px;
+      margin-bottom: 0;
+
+      .myIndent {
+        text-indent: 0;
+      }
+    }
+  }
+}
+
+// ----wave
+.wave{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    .move1{
+        animation: waveMove 8s infinite linear;
+
+    }
+    .move2{
+        animation: waveMove 8s infinite linear;
+
+    }
+    @keyframes waveMove {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-50%);
+        }
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
