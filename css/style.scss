@@ -24,6 +24,8 @@ $prime_color5: #d3c3b8;
 $prime_color6: #b3b960;
 $prime_color7: #a0bcc8;
 
+$placeholder: #bdbdbd;
+
 // mixin
 @mixin bgi($i) {
   background-image: url($i);
@@ -43,6 +45,9 @@ body {
 .coverpage {
   padding: 60px 24px 44px;
   @include bgi("../img/blueBg.svg");
+  @media screen and (min-width: 768px){
+      background-image: url(../img/wave2.svg);
+  }
   h2 {
     line-height: 125%;
     letter-spacing: 0.2rem;
@@ -52,16 +57,16 @@ body {
     width: fit-content;
     font-weight: $f_weight700;
     text-align: center;
-    .topsec{
-        display: block;
-        font-size: $f_32px;
-        margin: 0 auto 4px;
-        letter-spacing: 0.3rem;
+    .topsec {
+      display: block;
+      font-size: $f_32px;
+      margin: 0 auto 4px;
+      letter-spacing: 0.3rem;
     }
-    .botsec{
-        display: block;
-        font-size: $f_28px;
-        margin: 0 auto 32px;
+    .botsec {
+      display: block;
+      font-size: $f_28px;
+      margin: 0 auto 32px;
     }
   }
   .formHeader {
@@ -86,11 +91,13 @@ body {
   .formInfo {
     background-color: $prime_color3;
     width: 100%;
+    max-width: 808px;
     height: fit-content;
     padding: 32.5px 16px 24px;
     border-radius: 20px;
     border: 2px solid $prime_color2;
     position: relative;
+    margin: auto;
     .topBoat {
       position: absolute;
       top: 0;
@@ -208,42 +215,192 @@ body {
 }
 
 // ----wave
-.wave{
-    width: 100%;
-    height: fit-content;
-    overflow: hidden;
-    display: flex;
-    .move1{
-        animation: waveMove 8s infinite linear;
-
+.wave {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  margin-top: -1px;
+  margin-bottom: 67px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 73px;
+  }
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 81px;
+  }
+  .move1 {
+    animation: waveMove 8s infinite linear;
+  }
+  .move2 {
+    animation: waveMove 8s infinite linear;
+  }
+  @keyframes waveMove {
+    0% {
+      transform: translateX(0);
     }
-    .move2{
-        animation: waveMove 8s infinite linear;
-
+    100% {
+      transform: translateX(-50%);
     }
-    @keyframes waveMove {
-        0%{
-            transform: translateX(0);
-        }
-        100%{
-            transform: translateX(-50%);
-        }
-    }
-    
-
+  }
 }
 
+// ----form
+.formWrap {
+  padding: 0 24px;
+  width: 100%;
+  max-width: 808px;
+  margin: auto;
+  .myform {
+    padding: 40px 20px 20px 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    border: 2px solid $prime_color2;
+    position: relative;
+    box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
+    margin-bottom: 40px;
+    .formTitle {
+      width: fit-content;
+      padding: 10px 20px;
+      background-color: #fff;
+      border: 2px solid $prime_color2;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-radius: 50px;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+      span {
+        color: $prime_color2;
+        font-weight: 700;
+        line-height: 125%;
+        font-size: 18px;
+        letter-spacing: 0.2rem;
+        font-style: normal;
+      }
+    }
+    .form-control {
+      border: 1px solid $prime_color1;
+      padding: 17.5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      font-size: $f_16px;
+      &::placeholder {
+        color: $placeholder;
+      }
+      .formText {
+        color: $prime_color1;
+      }
+    }
+  }
+  .submitBtn {
+    width: 200px;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b57556;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35),
+      0px -4px 10px rgba(255, 255, 255, 0.9);
+    margin: 0 auto 58px;
+    border: none;
+    span {
+      color: white;
+      font-weight: 700;
+      line-height: 125%;
+      font-size: 18px;
+      letter-spacing: 0.2rem;
+      font-style: normal;
+    }
+  }
+}
 
+// ----prizeSec
+.prizeSec {
+  padding: 64px 21px 40px;
+    @include bgi('../img/prizeBg.svg');
+    margin-bottom: 40px;
+  .wrapWth {
+    max-width: 598px;
+    margin: auto;
+  }
+  .cardWrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    @media screen and (min-width: 768px) {
+      justify-content: flex-start;
+      gap: 32px;
+    }
+    .prizeCard {
+      width: 178px;
+      aspect-ratio: 178 / 112;
+      background-color: #fff;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0px 8px 0px #edeef0;
+      position: relative;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 9px;
+      }
+      .medal {
+        position: absolute;
+        top: -21.8px;
+        left: 50%;
+        transform: translateX(-50%);
+        span {
+          position: absolute;
+          height: fit-content;
+          top: 20.68px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: #fff;
+        }
+      }
+      .greentext {
+        color: $prime_color6;
+      }
+      .bluetext {
+        color: $prime_color7;
+      }
+      @mixin num($c) {
+        border: 1px solid $c;
+        width: fit-content;
+        padding: 3px 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $c;
+        position: absolute;
+        right: 8px;
+        top: 18px;
+        border-radius: 50px;
+      }
+      .greenNum {
+        @include num($prime_color6);
+      }
+      .blueNum {
+        @include num($prime_color7);
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        top: 53.7%;
+        bottom: 5.56%;
+        transform: translateX(-50%);
 
+        font-family: "Noto Sans TC";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 125%;
 
-
-
-
-
-
-
-
-
-
-
-
+        display: flex;
+        align-items: center;
+        text-align: center;
+        word-break: keep-all;
+      }
+    }
+  }
+}

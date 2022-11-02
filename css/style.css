@@ -12,6 +12,11 @@ body * {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 768px) {
+  .coverpage {
+    background-image: url(../img/wave2.svg);
+  }
+}
 .coverpage h2 {
   line-height: 125%;
   letter-spacing: 0.2rem;
@@ -57,6 +62,7 @@ body * {
 .coverpage .formInfo {
   background-color: #dae4f1;
   width: 100%;
+  max-width: 808px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -64,6 +70,7 @@ body * {
   border-radius: 20px;
   border: 2px solid #b57556;
   position: relative;
+  margin: auto;
 }
 .coverpage .formInfo .topBoat {
   position: absolute;
@@ -211,6 +218,18 @@ body * {
   height: fit-content;
   overflow: hidden;
   display: flex;
+  margin-top: -1px;
+  margin-bottom: 67px;
+}
+@media screen and (min-width: 768px) {
+  .wave {
+    margin-bottom: 73px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .wave {
+    margin-bottom: 81px;
+  }
 }
 .wave .move1 {
   -webkit-animation: waveMove 8s infinite linear;
@@ -235,4 +254,188 @@ body * {
   100% {
     transform: translateX(-50%);
   }
+}
+
+.formWrap {
+  padding: 0 24px;
+  width: 100%;
+  max-width: 808px;
+  margin: auto;
+}
+.formWrap .myform {
+  padding: 40px 20px 20px 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #b57556;
+  position: relative;
+  box-shadow: 0px 1px 20px rgba(73, 72, 72, 0.25);
+  margin-bottom: 40px;
+}
+.formWrap .myform .formTitle {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #b57556;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+}
+.formWrap .myform .formTitle span {
+  color: #b57556;
+  font-weight: 700;
+  line-height: 125%;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+.formWrap .myform .form-control {
+  border: 1px solid #204379;
+  padding: 17.5px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.formWrap .myform .form-control::-moz-placeholder {
+  color: #bdbdbd;
+}
+.formWrap .myform .form-control:-ms-input-placeholder {
+  color: #bdbdbd;
+}
+.formWrap .myform .form-control::placeholder {
+  color: #bdbdbd;
+}
+.formWrap .myform .form-control .formText {
+  color: #204379;
+}
+.formWrap .submitBtn {
+  width: 200px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b57556;
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35), 0px -4px 10px rgba(255, 255, 255, 0.9);
+  margin: 0 auto 58px;
+  border: none;
+}
+.formWrap .submitBtn span {
+  color: white;
+  font-weight: 700;
+  line-height: 125%;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+
+.prizeSec {
+  padding: 64px 21px 40px;
+  background-image: url("../img/prizeBg.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 40px;
+}
+.prizeSec .wrapWth {
+  max-width: 598px;
+  margin: auto;
+}
+.prizeSec .cardWrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .prizeSec .cardWrap {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+.prizeSec .cardWrap .prizeCard {
+  width: 178px;
+  aspect-ratio: 178/112;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0px 8px 0px #edeef0;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .prizeSec .cardWrap .prizeCard {
+    margin-bottom: 9px;
+  }
+}
+.prizeSec .cardWrap .prizeCard .medal {
+  position: absolute;
+  top: -21.8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.prizeSec .cardWrap .prizeCard .medal span {
+  position: absolute;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 20.68px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.prizeSec .cardWrap .prizeCard .greentext {
+  color: #b3b960;
+}
+.prizeSec .cardWrap .prizeCard .bluetext {
+  color: #a0bcc8;
+}
+.prizeSec .cardWrap .prizeCard .greenNum {
+  border: 1px solid #b3b960;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #b3b960;
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  border-radius: 50px;
+}
+.prizeSec .cardWrap .prizeCard .blueNum {
+  border: 1px solid #a0bcc8;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #a0bcc8;
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  border-radius: 50px;
+}
+.prizeSec .cardWrap .prizeCard span {
+  position: absolute;
+  left: 50%;
+  top: 53.7%;
+  bottom: 5.56%;
+  transform: translateX(-50%);
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  word-break: keep-all;
 }/*# sourceMappingURL=style.css.map */
