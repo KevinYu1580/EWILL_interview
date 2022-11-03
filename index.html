@@ -110,7 +110,7 @@
             <div class="col-12 inputWrap">
                 <label class="form-label">phone<span style=" color:red">*</span></label>
                 <input id="phone" type="text" class="form-control" :class="{failBorder: phone.failBorder}" v-model="phone.input" id="inputAddress"
-                    placeholder="placeholder text">
+                    placeholder="placeholder text" inputmode="decimal">
                 <div class="errorMsg">
                     {{phone.errorMsg}}
                 </div>
