@@ -5,6 +5,10 @@ body * {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+.btnFocus {
+  opacity: 1;
+}
+
 .coverpage {
   padding: 60px 24px 44px;
   background-image: url("../img/blueBg.svg");
@@ -48,8 +52,65 @@ body * {
   align-items: center;
   background-color: #b57556;
   border-radius: 50px;
-  box-shadow: 0px 0px 20px rgba(250, 163, 163, 0.91);
   margin: 0 auto 32px;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+.coverpage .formHeader::before {
+  content: "";
+  background: #b57556;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.coverpage .formHeader::after {
+  content: "";
+  background: linear-gradient(124deg, #efdbc8, #e9c87f, #b2e1ea, #90cae5, #f5caf4, #dfc9f9);
+  background-size: auto;
+  background-size: 400%;
+  width: 110%;
+  height: 120%;
+  border-radius: 50px;
+  filter: blur(5px);
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation: btnBgMove 20s linear infinite;
+          animation: btnBgMove 20s linear infinite;
+}
+.coverpage .formHeader:hover:after {
+  opacity: 1;
+}
+@-webkit-keyframes btnBgMove {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes btnBgMove {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 .coverpage .formHeader .headerText {
   color: white;
@@ -58,6 +119,7 @@ body * {
   font-size: 18px;
   letter-spacing: 0.2rem;
   font-style: normal;
+  z-index: 5;
 }
 .coverpage .formInfo {
   background-color: #dae4f1;
@@ -79,6 +141,11 @@ body * {
   width: 80px;
   height: 64px;
 }
+@media screen and (min-width: 768px) {
+  .coverpage .formInfo .topBoat {
+    right: 27px;
+  }
+}
 .coverpage .formInfo .topBoat .bubble1 {
   background-image: url("../img/bubble.svg");
   background-position: 50% 0%;
@@ -90,6 +157,8 @@ body * {
   top: -78%;
   right: 16%;
   z-index: 12;
+  -webkit-animation: bubble 4s infinite;
+          animation: bubble 4s infinite;
 }
 .coverpage .formInfo .topBoat .bubble2 {
   background-image: url("../img/bubble.svg");
@@ -102,6 +171,28 @@ body * {
   top: -104%;
   right: 0%;
   z-index: 12;
+  -webkit-animation: bubble 2s infinite;
+          animation: bubble 2s infinite;
+}
+@-webkit-keyframes bubble {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+@keyframes bubble {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
 }
 .coverpage .formInfo .topBoat .paddle {
   background-image: url("../img/paddle.svg");
@@ -111,9 +202,34 @@ body * {
   width: 62px;
   height: 46px;
   position: absolute;
-  top: -24%;
-  right: -10%;
+  top: -23px;
+  right: -16px;
   z-index: 11;
+  -webkit-animation: paddle 8s infinite;
+          animation: paddle 8s infinite;
+  transform-origin: 0 0;
+}
+@-webkit-keyframes paddle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes paddle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .coverpage .formInfo .topBoat .sup {
   background-image: url("../img/sup.svg");
@@ -123,8 +239,8 @@ body * {
   width: 80px;
   height: 64px;
   position: absolute;
-  top: -44%;
-  right: -18%;
+  top: -34px;
+  right: -15px;
   z-index: 10;
 }
 .coverpage .formInfo .botBoat {
@@ -133,6 +249,12 @@ body * {
   left: 0;
   width: 68px;
   height: 65px;
+}
+@media screen and (min-width: 768px) {
+  .coverpage .formInfo .botBoat {
+    bottom: -7px;
+    left: 40px;
+  }
 }
 .coverpage .formInfo .botBoat .firework {
   background-image: url("../img/firework.svg");
@@ -145,6 +267,36 @@ body * {
   bottom: -67%;
   left: -31%;
   z-index: 12;
+  -webkit-animation: firework 5s infinite;
+          animation: firework 5s infinite;
+}
+@-webkit-keyframes firework {
+  0% {
+    transform: scale(100%);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(180%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(180%);
+    opacity: 0;
+  }
+}
+@keyframes firework {
+  0% {
+    transform: scale(100%);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(180%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(180%);
+    opacity: 0;
+  }
 }
 .coverpage .formInfo .botBoat .sup {
   background-image: url("../img/sup2.svg");
@@ -232,14 +384,14 @@ body * {
   }
 }
 .wave .move1 {
-  -webkit-animation: waveMove 8s infinite linear;
-          animation: waveMove 8s infinite linear;
+  -webkit-animation: waveMove1 8s infinite linear;
+          animation: waveMove1 8s infinite linear;
 }
 .wave .move2 {
-  -webkit-animation: waveMove 8s infinite linear;
-          animation: waveMove 8s infinite linear;
+  -webkit-animation: waveMove2 8s infinite linear;
+          animation: waveMove2 8s infinite linear;
 }
-@-webkit-keyframes waveMove {
+@-webkit-keyframes waveMove1 {
   0% {
     transform: translateX(0);
   }
@@ -247,12 +399,28 @@ body * {
     transform: translateX(-50%);
   }
 }
-@keyframes waveMove {
+@keyframes waveMove1 {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+@-webkit-keyframes waveMove2 {
+  0% {
+    transform: translate(-1px, 0) translateX(0%);
+  }
+  100% {
+    transform: translate(-1px, 0) translateX(-50%);
+  }
+}
+@keyframes waveMove2 {
+  0% {
+    transform: translate(-1px, 0) translateX(0%);
+  }
+  100% {
+    transform: translate(-1px, 0) translateX(-50%);
   }
 }
 
@@ -285,6 +453,42 @@ body * {
   transform: translate(-50%, -50%);
   box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
 }
+.formWrap .myform .formTitle::after {
+  content: "";
+  position: absolute;
+  width: 64px;
+  top: -10px;
+  right: -44px;
+  aspect-ratio: 64/62;
+  -webkit-animation: turtle 5s infinite;
+          animation: turtle 5s infinite;
+  background-image: url("../img/turtle.svg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@-webkit-keyframes turtle {
+  0% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+@keyframes turtle {
+  0% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
 .formWrap .myform .formTitle span {
   color: #b57556;
   font-weight: 700;
@@ -312,6 +516,21 @@ body * {
 .formWrap .myform .form-control .formText {
   color: #204379;
 }
+.formWrap .myform .failBorder {
+  outline: 3px solid #e06d6d;
+}
+.formWrap .myform .inputWrap {
+  position: relative;
+}
+.formWrap .myform .inputWrap .errorMsg {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #e06d6d;
+}
 .formWrap .submitBtn {
   width: 200px;
   height: 57px;
@@ -321,7 +540,7 @@ body * {
   background-color: #b57556;
   border-radius: 50px;
   box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35), 0px -4px 10px rgba(255, 255, 255, 0.9);
-  margin: 0 auto 58px;
+  margin: 0 auto 8px;
   border: none;
 }
 .formWrap .submitBtn span {
@@ -331,6 +550,23 @@ body * {
   font-size: 18px;
   letter-spacing: 0.2rem;
   font-style: normal;
+}
+.formWrap .submitBtn .submitBtnFont {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.formWrap .submitBtn .submitBtnFont img {
+  display: none;
+}
+.formWrap .notValad {
+  color: #e06d6d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 58px;
+  text-align: center;
 }
 
 .prizeSec {
@@ -438,4 +674,70 @@ body * {
   align-items: center;
   text-align: center;
   word-break: keep-all;
+}
+
+.towerSec {
+  padding: 40px;
+}
+.towerSec .myText {
+  position: relative;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: #204379;
+  width: 294px;
+  margin: 0 auto 20px;
+}
+.towerSec .myText::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #204379;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  transform: rotate(-18deg);
+  transform-origin: 0 0;
+}
+.towerSec .myText::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #204379;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  transform: rotate(18deg);
+  transform-origin: 100% 0;
+}
+.towerSec .myText .time {
+  color: #b57556;
+}
+.towerSec .towerPic {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.shopSec {
+  padding: 40px 0;
+  background-color: #204379;
+  border-radius: 50px 50px 0 0;
+}
+.shopSec h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 200%;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+.shopSec .shopPic {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=style.css.map */
