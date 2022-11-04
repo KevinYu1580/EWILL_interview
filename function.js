@@ -14,10 +14,6 @@ function slideTo(v) {
 }
 
 
-// 手機板inpot focus時可跳出鍵盤
-// $('input').on('focus',function(){
-//     console.log(99)
-// })
 
 // ***表單驗證
 // 錯誤訊息於提交btn下方顯示
