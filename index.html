@@ -88,8 +88,8 @@
             </div>
             <div class="col-12 inputWrap">
                 <label class="form-label">store <span style=" color:red">*</span></label>
-                <input id="store" class="form-control" :class="{failBorder: store.failBorder}" v-model="store.input" type="text" list="stores"
-                    placeholder="placeholder text" />
+                <input id="store" class="form-control" :class="{failBorder: store.failBorder}" v-model="store.input"
+                    type="text" list="stores" placeholder="placeholder text" />
                 <datalist id="stores">
                     <!-- storeList -->
                 </datalist>
@@ -100,8 +100,8 @@
 
             <div class="col-12 inputWrap">
                 <label class="form-label">name<span style=" color:red">*</span></label>
-                <input id="name" type="text" class="form-control" :class="{failBorder: name.failBorder}" v-model="name.input" id="inputAddress2"
-                    placeholder="placeholder text">
+                <input id="name" type="text" class="form-control" :class="{failBorder: name.failBorder}"
+                    v-model="name.input" id="inputAddress2" placeholder="placeholder text">
                 <div class="errorMsg">
                     {{name.errorMsg}}
                 </div>
@@ -109,8 +109,8 @@
 
             <div class="col-12 inputWrap">
                 <label class="form-label">phone<span style=" color:red">*</span></label>
-                <input id="phone" type="text" class="form-control" :class="{failBorder: phone.failBorder}" v-model="phone.input" id="inputAddress"
-                    placeholder="placeholder text" inputmode="decimal">
+                <input id="phone" type="text" class="form-control" :class="{failBorder: phone.failBorder}"
+                    v-model="phone.input" id="inputAddress" placeholder="placeholder text" inputmode="decimal">
                 <div class="errorMsg">
                     {{phone.errorMsg}}
                 </div>
@@ -118,8 +118,8 @@
 
             <div class="col-12 inputWrap">
                 <label class="form-label">Amount of consumption<span style=" color:red">*</span></label>
-                <input id="consumption" type="text" class="form-control" :class="{failBorder: consumption.failBorder}" v-model="consumption.input" id="inputAddress2"
-                    placeholder="placeholder text" inputmode="decimal">
+                <input id="consumption" type="text" class="form-control" :class="{failBorder: consumption.failBorder}"
+                v-model="consumption.input" placeholder="placeholder text" inputmode="decimal">
                 <div class="errorMsg">
                     {{consumption.errorMsg}}
                 </div>
@@ -127,10 +127,14 @@
 
             <div class="col-12 inputWrap">
                 <label class="form-label">payment <span style=" color:red">*</span></label>
-                <select id="payment" class="form-control form-select form-select-lg">
+                <select id="payment" class="form-control form-select form-select-lg"
+                    :class="{failBorder: payment.failBorder}" v-model="payment.input">
                     <option class="formText" value="digital payment">digital payment</option>
                     <option class="formText" value="ATM">ATM</option>
                 </select>
+                <div class="errorMsg">
+                    {{payment.errorMsg}}
+                </div>
             </div>
 
         </form>

@@ -34,6 +34,8 @@ const formSummit = Vue.createApp({
 
       consumption: { input: "", errorMsg: "", failBorder: false},
 
+      payment: { input:"", errorMsg: "", failBorder: false},
+
       //  錯誤信息
       notValid: "",
 
@@ -90,7 +92,6 @@ const formSummit = Vue.createApp({
           this.phone.errorMsg = "";
           this.phone.failBorder = false;
         }
-
       } else {
         this.phone.errorMsg = "required";
         this.phone.failBorder = true;
@@ -113,19 +114,22 @@ const formSummit = Vue.createApp({
         this.consumption.errorMsg = "required";
         this.consumption.failBorder = true;
       }
-      
+
+      // ***payment格式驗證
+      if (this.payment.input != "") {
+        this.payment.failBorder = false;
+        this.payment.errorMsg = "";
+      } else {
+        this.payment.errorMsg = "required";
+        this.payment.failBorder = true;
+      }
 
       // ***提交表單btn底下文字
       this.notValid = "This person does not exit";
 
-      // ***驗證成功後送出表單
-      // 抓取input值
-      const store = $("#myform #store").val();
-      const name = $("#myform #name").val();
-      const phone = $("#myform #phone").val();
-      const consumption = $("#myform #consumption").val();
-      const payment = $("#myform #payment").val();
+      
 
+      // ***驗證成功後送出表單
       // --提交按鈕內文字及樣式
       this.submitBtnStyle.text = "failure";
       $("#formSubmit .submitBtnFont").css("color", "#FFE3E3");
@@ -133,19 +137,14 @@ const formSummit = Vue.createApp({
       $("#formSubmit .submitBtnFont img").css("display", "block");
       $("#formSubmit .submitBtnFont img").attr("src", "./img/submitFail.svg");
 
-      if (
-        // 如果沒有錯誤訊息則送出表單
-        this.store.errorMsg +
-          this.name.errorMsg +
-          this.phone.errorMsg +
-          this.consumption.errorMsg ==""
-      ) {
+      if (// 如果沒有錯誤訊息則送出表單
+        this.store.errorMsg + this.name.errorMsg + this.phone.errorMsg + this.consumption.errorMsg + this.payment.errorMsg =="") {
         $.post("./api檔案(暫無)", {
-          store: store,
-          name: name,
-          phone: phone,
-          consumption: consumption,
-          payment: payment,
+          store: this.store.input,
+          name: this.name.input,
+          phone: this.phone.input,
+          consumption: this.consumption.input,
+          payment: this.payment.input,
         });
 
         // 提交按鈕內文字及樣式
