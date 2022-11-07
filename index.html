@@ -91,7 +91,7 @@
                 <input id="store" class="form-control" :class="{failBorder: store.failBorder}" v-model="store.input"
                     type="text" list="stores" placeholder="placeholder text" />
                 <datalist id="stores">
-                    <option  v-for="store in storelist">{{store}}</option>
+                    <option  v-for="store in storelist" >{{store}}</option>
                     <!-- storeList -->
                 </datalist>
                 <div class="errorMsg">
