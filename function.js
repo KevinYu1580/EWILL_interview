@@ -1,12 +1,12 @@
 // ***store datalist迴圈
 // 由此新增store
-const storelist = ["store1", "store2", "store3", "store4", "store5"];
+// const storelist = ["store1", "store2", "store3", "store4", "store5"];
 
-for (i = 0; i < storelist.length; i++) {
-  $("#myform #stores").append(
-    `<option class="formText item${i + 1}">${storelist[i]}</option>`
-  );
-}
+// for (i = 0; i < storelist.length; i++) {
+//   $("#myform #stores").append(
+//     `<option class="formText item${i + 1}">${storelist[i]}</option>`
+//   );
+// }
 
 // 點擊按鈕後滑動到目的地
 function slideTo(v) {
@@ -18,6 +18,10 @@ function slideTo(v) {
 const formSummit = Vue.createApp({
   data() {
     return {
+
+      // 表單datalist迴圈
+      storelist:  ["店家1", "店家2", "店家3", "店家4", "店家5"],
+
       // ***表單
       // 內容及驗證
       store: { input: "", errorMsg: "", failBorder: false },
@@ -30,6 +34,7 @@ const formSummit = Vue.createApp({
 
       payment: { input: "", errorMsg: "", failBorder: false },
 
+      
       //  錯誤信息
       notValid: "",
 
@@ -47,7 +52,7 @@ const formSummit = Vue.createApp({
       // ***store比對
       if (this.store.input != "") {
         this.store.failBorder = false;
-        if ($.inArray(this.store.input, storelist) == -1) {
+        if ($.inArray(this.store.input, this.storelist) == -1) {
           this.store.errorMsg = "no result 查無此店";
           this.store.failBorder = true;
         } else {
