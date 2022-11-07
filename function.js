@@ -13,8 +13,6 @@ function slideTo(v) {
   $(window).scrollTop($(`${v}`).offset().top);
 }
 
-
-
 // ***表單驗證
 // 錯誤訊息於提交btn下方顯示
 const formSummit = Vue.createApp({
@@ -24,13 +22,13 @@ const formSummit = Vue.createApp({
       // 內容及驗證
       store: { input: "", errorMsg: "", failBorder: false },
 
-      name: { input: "", errorMsg: "" , failBorder: false},
+      name: { input: "", errorMsg: "", failBorder: false },
 
-      phone: { input: "", errorMsg: "", failBorder: false},
+      phone: { input: "", errorMsg: "", failBorder: false },
 
-      consumption: { input: "", errorMsg: "", failBorder: false},
+      consumption: { input: "", errorMsg: "", failBorder: false },
 
-      payment: { input:"", errorMsg: "", failBorder: false},
+      payment: { input: "", errorMsg: "", failBorder: false },
 
       //  錯誤信息
       notValid: "",
@@ -93,20 +91,21 @@ const formSummit = Vue.createApp({
         this.phone.failBorder = true;
       }
 
-
       // ***consumption格式驗證
       if (this.consumption.input != "") {
         const consumption_regularExp = /[0-9]/;
         this.consumption.failBorder = false;
-      if (
-        consumption_regularExp.test(this.consumption.input) && this.consumption.input >= 0 ) {
-        this.consumption.errorMsg = "";
-        this.consumption.failBorder = false;
-      } else {
-        this.consumption.errorMsg = "wrong format 請填入數字且不可小於0";
-        this.consumption.failBorder = true;
-      }
+        if (
+          consumption_regularExp.test(this.consumption.input) &&
+          this.consumption.input >= 0
+        ) {
+          this.consumption.errorMsg = "";
+          this.consumption.failBorder = false;
         } else {
+          this.consumption.errorMsg = "wrong format 請填入數字且不可小於0";
+          this.consumption.failBorder = true;
+        }
+      } else {
         this.consumption.errorMsg = "required";
         this.consumption.failBorder = true;
       }
@@ -123,8 +122,6 @@ const formSummit = Vue.createApp({
       // ***提交表單btn底下文字
       this.notValid = "This person does not exit";
 
-      
-
       // ***驗證成功後送出表單
       // --提交按鈕內文字及樣式
       this.submitBtnStyle.text = "failure";
@@ -133,8 +130,15 @@ const formSummit = Vue.createApp({
       $("#formSubmit .submitBtnFont img").css("display", "block");
       $("#formSubmit .submitBtnFont img").attr("src", "./img/submitFail.svg");
 
-      if (// 如果沒有錯誤訊息則送出表單
-        this.store.errorMsg + this.name.errorMsg + this.phone.errorMsg + this.consumption.errorMsg + this.payment.errorMsg =="") {
+      if (
+        // 如果沒有錯誤訊息則送出表單
+        this.store.errorMsg +
+          this.name.errorMsg +
+          this.phone.errorMsg +
+          this.consumption.errorMsg +
+          this.payment.errorMsg ==
+        ""
+      ) {
         $.post("./api檔案(暫無)", {
           store: this.store.input,
           name: this.name.input,
@@ -158,17 +162,16 @@ const formSummit = Vue.createApp({
 });
 formSummit.mount("#formSubmit");
 
-
 // 按鈕focus效果
-$('.btnFocus').mousedown(function(){
-    $(this).css({
-        'transform': 'scale(95%)',
-        'background':'#D3A995'
-    })
-})
-$('.btnFocus').mouseup(function(){
-    $(this).css({
-        'transform': 'scale(100%)',
-        'background':'#B57556'
-    })
-})
+$(".btnFocus").mousedown(function () {
+  $(this).css({
+    transform: "scale(95%)",
+    background: "#D3A995",
+  });
+});
+$(".btnFocus").mouseup(function () {
+  $(this).css({
+    transform: "scale(100%)",
+    background: "#B57556",
+  });
+});
